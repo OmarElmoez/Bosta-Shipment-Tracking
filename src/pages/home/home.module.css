@@ -1,0 +1,14 @@
+.instruction_text {
+  text-align: center;
+  word-spacing: 0.5rem;
+  font-size: 2rem;
+}
+
+.instruction_text span {
+  font-weight: 800;
+}
+
+.instruction_text span:nth-child(2) {
+  color: var(--danger-color);
+}
+

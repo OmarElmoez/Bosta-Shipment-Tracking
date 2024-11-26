@@ -1,8 +1,12 @@
 import Logo from '@/assets/bosta-logo.png';
 import styles from './header.module.css'
+import useModal from "@/components/hooks/useModal.ts";
 
 const { header, header_container, actions, lang_btn } = styles;
 const Header = ( ) => {
+
+  const {openModal} = useModal();
+
   return (
     <header className={header}>
       <section className={`container ${header_container}`}>
@@ -20,7 +24,7 @@ const Header = ( ) => {
 
         <section className="flex-center" style={{ gap: "3rem" }}>
           <div className={`flex-center ${actions}`} style={{ gap: "1rem" }}>
-            <button>تتبع شحنتك</button>
+            <button onClick={() => openModal()}>تتبع شحنتك</button>
 
             <button>تسجيل الدخول</button>
           </div>

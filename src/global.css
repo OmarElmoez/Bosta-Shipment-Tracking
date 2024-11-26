@@ -8,6 +8,10 @@
   --border-color: #f1f1f1;
   --main-text-color: #222b46;
   --danger-color: #f40105;
+  --info-text-color: #a4a4a4;
+  --delivered-color: #36b600;
+  --not-delivered-color: #f9ba02;
+  --main-bar-color:  #eeeeee;
 }
 
 html {
@@ -41,6 +45,18 @@ button {
   margin-inline: auto;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* ====================== Custom Classes ====================== */
 .flex-center {
   display: flex;
@@ -55,4 +71,10 @@ button {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 1000;
+}
+
+.error_msg {
+  margin-top: 1rem;
+  color: var(--danger-color);
+  font-weight: 600;
 }

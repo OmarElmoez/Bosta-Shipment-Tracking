@@ -3,20 +3,21 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 import {Home as HomePage, TrackingDetails} from '@/pages';
 import {PageSuspense} from "@/components";
+
 const MainLayout = lazy(() => import ('@/layout/main-layout/MainLayout'));
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <PageSuspense><MainLayout /></PageSuspense>,
+    element: <PageSuspense><MainLayout/></PageSuspense>,
     children: [
       {
         index: true,
-        element: <PageSuspense><HomePage /></PageSuspense>
+        element: <PageSuspense><HomePage/></PageSuspense>
       },
       {
         path: 'tracking-details/:trackingNumber',
-        element: <PageSuspense><TrackingDetails /></PageSuspense>
+        element: <PageSuspense><TrackingDetails/></PageSuspense>
       }
     ]
   }
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
 
 const Routes = () => {
   return (
-    <RouterProvider router={router} />
+    <RouterProvider router={router}/>
   )
 }
 

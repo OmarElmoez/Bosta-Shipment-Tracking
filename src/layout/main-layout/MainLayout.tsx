@@ -1,14 +1,17 @@
 import {Header} from "@/components";
 import {Outlet} from "react-router-dom";
+import ModalContextProvider from "@/context/ModalContext.tsx";
 
 const MainLayout = () => {
   return (
-    <main>
-      <Header />
-      <section className="container">
-        <Outlet />
-      </section>
-    </main>
+    <ModalContextProvider>
+      <main>
+        <Header/>
+        <section className="container">
+          <Outlet/>
+        </section>
+      </main>
+    </ModalContextProvider>
   )
 }
 

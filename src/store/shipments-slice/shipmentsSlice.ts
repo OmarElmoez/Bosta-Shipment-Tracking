@@ -13,6 +13,7 @@ export type TShipmentsSliceInitialState = {
     timestamp: string,
     hub?: string
   }[],
+  SupportPhoneNumbers: string[],
   loading: "idle" | "pending" | "succeeded" | "failed",
   error: string | null,
 }
@@ -25,6 +26,7 @@ const initialState: TShipmentsSliceInitialState = {
   PromisedDate: "",
   TrackingNumber: "",
   TransitEvents: [],
+  SupportPhoneNumbers: [],
   loading: "idle",
   error: null,
 }
@@ -47,6 +49,7 @@ const shipmentsSlice = createSlice({
         state.PromisedDate = action.payload.PromisedDate;
         state.TrackingNumber = action.payload.TrackingNumber;
         state.TransitEvents = action.payload.TransitEvents;
+        state.SupportPhoneNumbers = action.payload.SupportPhoneNumbers
       })
 
       .addCase(actGetShipmentDetails.rejected, (state, action) => {

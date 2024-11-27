@@ -25,32 +25,6 @@
   border-radius: 0 0 0.8rem 0.8rem ;
 }
 
-.shipment_details h4 {
-  font-weight: 600;
-}
-
-.shipment_details table {
-  width: 100%;
-  margin-top: 1.5rem;
-  border: 2px solid var(--border-color);
-  border-radius: 0.6rem;
-}
-
-.shipment_details table thead {
-  background-color: var(--table-header-bg);
-  color: var(--table-header-text-color);
-  text-align: right;
-}
-
-.shipment_details table thead tr th {
-  font-weight: 600;
-}
-
-.shipment_details table tr th,
-.shipment_details table tr td {
-  padding: 1.2rem 1.6rem;
-}
-
 .address,
 .report_issue {
   padding: 1.6rem 2.4rem ;

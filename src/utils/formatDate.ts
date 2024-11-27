@@ -23,10 +23,23 @@ const formatDate = (val: string) => {
     year: 'numeric'
   }).format(date);
 
+
+  const dayNames = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+  const dayName = dayNames[date.getDay()];
+
+  const formattedDate = new Intl.DateTimeFormat('ar-EG', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric'
+  }).format(date).replace(/\//g, '/');
+
+  const specificFormat = `${dayName} ${formattedDate} - at ${timeFormat.toLowerCase()}`;
+
   return {
     time: timeFormat.toLowerCase(), // converts to lowercase for consistency
     arabicDate: arabicDateFormat,
-    standardDate: standardDateFormat
+    standardDate: standardDateFormat,
+    specificFormat: specificFormat
   };
 };
 

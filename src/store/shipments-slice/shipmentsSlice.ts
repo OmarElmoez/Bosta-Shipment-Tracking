@@ -35,7 +35,11 @@ const initialState: TShipmentsSliceInitialState = {
 const shipmentsSlice = createSlice({
   name: "shipments",
   initialState,
-  reducers: {},
+  reducers: {
+    resetError: (state) =>  {
+      state.error = null;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(actGetShipmentDetails.pending, (state) => {
@@ -58,6 +62,8 @@ const shipmentsSlice = createSlice({
       })
   }
 })
+
+export const {resetError} = shipmentsSlice.actions;
 
 export {actGetShipmentDetails}
 

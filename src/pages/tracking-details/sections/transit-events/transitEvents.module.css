@@ -19,6 +19,10 @@
   font-weight: 600;
 }
 
+.shipment_details.en table thead tr th {
+  text-align: left;
+}
+
 .shipment_details table tr th,
 .shipment_details table tr td {
   padding: 1.2rem 1.6rem;

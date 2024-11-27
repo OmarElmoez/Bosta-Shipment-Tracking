@@ -1,6 +1,6 @@
 const LottieFilesPaths = {
   notFound: "/lottie-files/notFound.lottie",
-  error: "/lottie-files/error.lottie",
+  track: "/lottie-files/track.lottie",
 }
 
 export default LottieFilesPaths

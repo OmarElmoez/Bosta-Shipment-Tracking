@@ -31,3 +31,9 @@
   left: 0;
   height: 100%;
 }
+
+.input_container.en button {
+  left: unset;
+  right: 0;
+  border-radius: 0 0.5rem 0.5rem 0;
+}

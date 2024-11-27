@@ -42,6 +42,12 @@ button {
   background-color: transparent;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
 .container {
   width: 80%;
   margin-inline: auto;
@@ -79,4 +85,8 @@ input[type=number] {
   margin-top: 1rem;
   color: var(--danger-color);
   font-weight: 600;
+}
+
+a.selected {
+  color: var(--danger-color)
 }

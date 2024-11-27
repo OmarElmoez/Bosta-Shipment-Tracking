@@ -4,44 +4,55 @@ import Logo from '@/assets/bosta-logo.png';
 import styles from './header.module.css'
 import useModal from "@/components/hooks/useModal.ts";
 import {useEffect, useState} from "react";
-import i18n from "i18next";
+import {NavLink, useNavigate} from "react-router-dom";
 
-const {header, header_container, actions, lang_btn} = styles;
+const {header, header_container, actions, lang_btn, en} = styles;
 const Header = () => {
 
   const {openModal} = useModal();
 
   const [language, setLanguage] = useState('ar');
 
-  const {t} = useTranslation();
+  const {t,i18n} = useTranslation();
 
   useEffect(() => {
     void i18n.changeLanguage(language);
     document.documentElement.lang = language;
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
-  }, [language]);
+    document.documentElement.className = language
+  }, [i18n, language]);
 
+  const navigate = useNavigate();
+  
+  const goHome = () => {
+    void navigate('/')
+  }
+
+  const onClickTrackHandler = () => {
+    openModal();
+    void navigate('/')
+  }
 
   return (
     <header className={header}>
       <section className={`container ${header_container}`}>
-        <div>
+        <div onClick={goHome} style={{ cursor: 'pointer' }}>
           <img src={Logo} alt="logo"/>
         </div>
 
         <nav>
           <menu className="flex-center" style={{gap: "5rem"}}>
-            <li>{t('homeLink')}</li>
-            <li>الأسعار</li>
-            <li>كلم المبيعات</li>
+            <NavLink to="home" className={({ isActive }) => (isActive ? "selected" : "")}>{t('homeLink')}</NavLink>
+            <NavLink to="pricing" className={({ isActive }) => (isActive ? "selected" : "")}>{t('pricesLink')}</NavLink>
+            <NavLink to="sales" className={({ isActive }) => (isActive ? "selected" : "")}>{t('salesLink')}</NavLink>
           </menu>
         </nav>
 
         <section className="flex-center" style={{gap: "3rem"}}>
-          <div className={`flex-center ${actions}`} style={{gap: "1rem"}}>
-            <button onClick={() => openModal()}>تتبع شحنتك</button>
+          <div className={`flex-center ${actions} ${i18n.resolvedLanguage === 'en' ? en : ''}`} style={{gap: "1rem"}}>
+            <button onClick={onClickTrackHandler}>{t('trackShipment')}</button>
 
-            <button>تسجيل الدخول</button>
+            <NavLink to='login' className={({ isActive }) => (isActive ? "selected" : "")}>{t('login')}</NavLink>
           </div>
           <button className={lang_btn} onClick={() => setLanguage(
             prev => prev === 'ar' ? 'en' : 'ar')}>{language === 'ar' ? "EN" : "Ar"}</button>

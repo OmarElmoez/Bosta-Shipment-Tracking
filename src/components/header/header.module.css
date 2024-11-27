@@ -19,6 +19,17 @@
   border-left: 1px solid var(--border-color);
 }
 
+.actions button:first-child:hover {
+  color: var(--danger-color);
+}
+
+.en.actions button:first-child {
+  padding-left: 0;
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+  padding-right: 1rem;
+}
+
 .lang_btn {
   color: var(--danger-color);
 }

@@ -5,12 +5,22 @@ import useModal from "@/components/hooks/useModal.ts";
 import {useForm} from "react-hook-form";
 import TrackingFormSchema, {TTrackingForm} from "@/schemas/TrackingFormSchema.ts";
 import {zodResolver} from "@hookform/resolvers/zod";
+import {useAppDispatch, useAppSelector} from "@/store/hooks.ts";
+import {actGetShipmentDetails} from "@/store/shipments-slice/shipmentsSlice.ts";
+import {useNavigate} from "react-router-dom";
+import {LoadingIndicator} from "@/components";
 
 const {form_header, input_container} = styles;
 
 const TrackingForm = () => {
 
   const {closeModal} = useModal();
+
+  const dispatch = useAppDispatch();
+
+  const {loading, error} =  useAppSelector(state => state.shipments);
+  
+  const navigate = useNavigate();
 
   const {register, handleSubmit, formState: {errors}, reset} = useForm<TTrackingForm>({
       resolver: zodResolver(TrackingFormSchema)
@@ -23,11 +33,19 @@ const TrackingForm = () => {
   }
 
   const onSubmit = (data: TTrackingForm) => {
-    console.log(data);
+    dispatch(actGetShipmentDetails({trackingNumber: data.trackingNumber})).unwrap().then(() => {
+      void navigate(`tracking-details/${data.trackingNumber}`, {replace: true});
+      onClose();
+    })
+    .catch((error) => {
+      console.error('Failed to fetch shipment details:', error);
+    });
   }
 
   return (
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
+    <>
+      {loading === 'pending' && <div className="loadingBox"><LoadingIndicator /></div>}
+      {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
     <form onSubmit={handleSubmit(onSubmit)}>
       <header className={form_header}>
         <span>تتبع شحنتك</span>
@@ -43,7 +61,9 @@ const TrackingForm = () => {
         </button>
       </section>
       <p className="error_msg">{errors.trackingNumber?.message}</p>
+      {(error && !errors.trackingNumber?.message) && <p className="error_msg">{error}</p>}
     </form>
+    </>
   )
 }
 

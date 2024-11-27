@@ -27,6 +27,7 @@ const TrackingForm = () => {
   }
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <form onSubmit={handleSubmit(onSubmit)}>
       <header className={form_header}>
         <span>تتبع شحنتك</span>

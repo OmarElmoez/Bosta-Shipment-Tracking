@@ -7,7 +7,7 @@ type TModalContext = {
   closeModal: () => void;
 }
 
-export const ModalContext = createContext<TModalContext>({
+const ModalContext = createContext<TModalContext>({
   openModal: () => {},
   closeModal: () => {},
 })
@@ -35,4 +35,5 @@ const ModalContextProvider = ({ children }: {children: ReactNode}) => {
   </ModalContext.Provider>
 }
 
+export {ModalContext};
 export default ModalContextProvider;

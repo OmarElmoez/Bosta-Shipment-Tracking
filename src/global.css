@@ -12,6 +12,8 @@
   --delivered-color: #36b600;
   --not-delivered-color: #f9ba02;
   --main-bar-color:  #eeeeee;
+  --table-header-bg: #fafafa;
+  --table-header-text-color: #8f9bb2;
 }
 
 html {

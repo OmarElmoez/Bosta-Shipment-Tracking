@@ -8,6 +8,17 @@
   justify-content: space-between;
 }
 
+@media (max-width: 991px) {
+  .info_container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .info_container > article {
+    text-align: center;
+  }
+}
+
 .info_box p:first-child {
   color: var(--info-text-color);
 }

@@ -7,7 +7,7 @@ const MainLayout = () => {
     <ModalContextProvider>
       <main>
         <Header/>
-        <section className="container" style={{ paddingBottom: "2rem" }}>
+        <section className="container content_container" style={{ paddingBottom: "2rem" }}>
           <Outlet/>
         </section>
       </main>

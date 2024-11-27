@@ -27,3 +27,9 @@
 .shipment_details table tr td {
   padding: 1.2rem 1.6rem;
 }
+
+@media (max-width: 991px) {
+  .shipment_details {
+    overflow-x: auto;
+  }
+}

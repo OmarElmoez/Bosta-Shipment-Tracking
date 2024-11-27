@@ -48,6 +48,12 @@
   font-weight: 700;
 }
 
+@media (max-width: 991px) {
+  .text_box p {
+    text-align: center;
+  }
+}
+
 .text_box button {
   background-color: var(--danger-color);
   color: #fff;
@@ -63,4 +69,10 @@
   gap: 2rem;
   margin-top: 3rem;
   grid-template-columns: 1fr 400px;
+}
+
+@media (max-width: 991px) {
+  .bottom_div {
+    grid-template-columns: 100%;
+  }
 }

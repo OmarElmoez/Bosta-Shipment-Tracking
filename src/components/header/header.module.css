@@ -4,6 +4,12 @@
   font-weight: 800;
 }
 
+@media (max-width: 991px) {
+  .header {
+    padding-block: 1rem;
+  }
+}
+
 .header_container {
   display: flex;
   align-items: center;
@@ -12,6 +18,16 @@
 
 .header nav li {
   cursor: pointer;
+}
+
+.left_section {
+  gap: 3rem;
+}
+
+@media (max-width: 991px) {
+  .left_section {
+    gap: 1rem;
+  }
 }
 
 .actions button:first-child {

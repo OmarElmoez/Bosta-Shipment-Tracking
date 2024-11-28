@@ -1,18 +1,13 @@
 import i18next from "@/utils/i18n";
 
 export const statusInfo = {
-  'delivered': {
-    color: "var(--delivered-color)",
-    text: i18next.t('deliveredStatus')
-  },
-  'cancelled': {
-    color: "var(--danger-color)",
-    text: i18next.t('cancelledStatus')
-  },
-  'delivered_to_sender': {
-    color: "var(--not-delivered-color)",
-    text: i18next.t('notDeliveredStatus')
-  },
+  'delivered': "var(--delivered-color)",
+  'cancelled': "var(--danger-color)",
+  'delivered_to_sender': "var(--not-delivered-color)",
+}
+
+export const getTranslatedText = (status: TStatus) => {
+  return `${i18next.t(status)}`
 }
 
 export type TStatus = keyof typeof statusInfo;

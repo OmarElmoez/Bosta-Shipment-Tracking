@@ -16,19 +16,19 @@ const TrackingBar = ({status}: TTrackingBarProps) => {
 
   const steps = [
     {
-      icon: <CheckIcon color={statusInfo[status].color}/>,
+      icon: <CheckIcon color={statusInfo[status]}/>,
       text: `${t('stepOne')}`
     },
     {
-      icon: <CheckIcon color={statusInfo[status].color}/>,
+      icon: <CheckIcon color={statusInfo[status]}/>,
       text: `${t('stepTwo')}`
     },
     {
-      icon: <CheckIcon color={statusInfo[status].color}/>,
+      icon: <CheckIcon color={statusInfo[status]}/>,
       text: `${t('stepThree')}`
     },
     {
-      icon: <CheckIcon color={status === 'delivered' ? statusInfo['delivered'].color : "var(--info-text-color)"}/>,
+      icon: <CheckIcon color={status === 'delivered' ? statusInfo['delivered'] : "var(--info-text-color)"}/>,
       text: `${t('stepFour')}`
     },
   ]
@@ -41,15 +41,15 @@ const TrackingBar = ({status}: TTrackingBarProps) => {
             {step.icon}
             <p>{step.text}</p>
             {(status === 'cancelled' && idx === 2) &&
-                <span className={reason} style={{color: statusInfo[status].color}}>{t('cancelledFromMerchant')}</span>}
+                <span className={reason} style={{color: statusInfo[status]}}>{t('cancelledFromMerchant')}</span>}
             {(status === 'delivered_to_sender' && idx === 2) &&
-                <span className={reason} style={{color: statusInfo[status].color}}>{t('clientNotFound')}</span>}
+                <span className={reason} style={{color: statusInfo[status]}}>{t('clientNotFound')}</span>}
           </div>
         ))}
         <div className={bottom_bar}></div>
         <div className={`${top_bar} ${i18n.resolvedLanguage === 'en' ? en : ''}`}
              style={{
-               backgroundColor: statusInfo[status].color,
+               backgroundColor: statusInfo[status],
                width: status === 'delivered' ? "100%" : i18n.resolvedLanguage === 'en' ? '72%' : "68%"
              }}></div>
       </article>

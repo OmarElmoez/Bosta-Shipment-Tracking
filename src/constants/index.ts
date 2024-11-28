@@ -7,7 +7,7 @@ export const statusInfo = {
 }
 
 export const getTranslatedText = (status: TStatus) => {
-  return `${i18next.t(status)}`
+  return i18next.t(status)
 }
 
 export type TStatus = keyof typeof statusInfo;

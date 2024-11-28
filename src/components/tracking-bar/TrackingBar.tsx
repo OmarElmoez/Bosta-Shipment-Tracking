@@ -3,7 +3,7 @@ import styles from './trackingBar.module.css';
 import {statusInfo, TStatus} from "@/constants";
 import {useTranslation} from "react-i18next";
 
-const {steps_container, bottom_bar, step_box, top_bar, reason, en} = styles;
+const {steps_container, bottom_bar, step_box, top_bar, reason, en, cancel_reason, notDelivered_reason} = styles;
 
 type TTrackingBarProps = {
   status: TStatus;
@@ -41,9 +41,9 @@ const TrackingBar = ({status}: TTrackingBarProps) => {
             {step.icon}
             <p>{step.text}</p>
             {(status === 'cancelled' && idx === 2) &&
-                <span className={reason} style={{color: statusInfo[status]}}>{t('cancelledFromMerchant')}</span>}
+                <span className={`${reason} ${i18n.resolvedLanguage === 'en' ? en : ''} ${i18n.resolvedLanguage === 'ar' ? cancel_reason : ''}`} style={{color: statusInfo[status]}}>{t('cancelledFromMerchant')}</span>}
             {(status === 'delivered_to_sender' && idx === 2) &&
-                <span className={reason} style={{color: statusInfo[status]}}>{t('clientNotFound')}</span>}
+                <span className={`${reason} ${i18n.resolvedLanguage === 'en' ? en : ''} ${i18n.resolvedLanguage === 'ar' ? notDelivered_reason : ''}`} style={{color: statusInfo[status]}}>{t('clientNotFound')}</span>}
           </div>
         ))}
         <div className={bottom_bar}></div>

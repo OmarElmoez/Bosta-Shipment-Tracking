@@ -23,7 +23,7 @@
   "stepTwo": "The shipment was received from the merchant",
   "stepThree": "The shipment was received from the store",
   "stepFour": "Delivered",
-  "cancelledFromMerchant": "The shipment was canceled from the merchant",
+  "cancelledFromMerchant": "shipment was canceled from the merchant",
   "clientNotFound": "The client is not available at the address",
   "delivered": "Delivered",
   "cancelled": "Cancelled",

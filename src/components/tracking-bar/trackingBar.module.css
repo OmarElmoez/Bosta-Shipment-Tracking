@@ -33,6 +33,18 @@
     font-size: 1rem;
     bottom: -30px;
   }
+
+  .en.reason {
+    bottom: -44px;
+  }
+
+  .cancel_reason,
+  .notDelivered_reason {
+    white-space: nowrap;
+    bottom: -20px;
+    right: -20px;
+  }
+
 }
 
 .step_box svg {

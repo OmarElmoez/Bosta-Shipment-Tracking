@@ -50,7 +50,7 @@ const TrackingBar = ({status}: TTrackingBarProps) => {
         <div className={`${top_bar} ${i18n.resolvedLanguage === 'en' ? en : ''}`}
              style={{
                backgroundColor: statusInfo[status],
-               width: status === 'delivered' ? "100%" : i18n.resolvedLanguage === 'en' ? '72%' : "68%"
+               width: status === 'delivered' ? "100%" : "63%"
              }}></div>
       </article>
     </>

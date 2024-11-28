@@ -17,7 +17,12 @@ track their shipments by entering a tracking number.
 - **Frontend Framework**: [React](https://reactjs.org/)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **CSS Framework/Styling**: CSS Modules
-
+- **Routing**: [react-router-dom](https://reactrouter.com/home)
+- **Dealing With Forms**: [react-hook-form](https://react-hook-form.com/)
+- **Form Validation**: [Zod](https://zod.dev/)
+- **State Management**: [react-redux](https://react-redux.js.org/introduction/getting-started)
+- **Sending Requests**: [axios](https://axios-http.com/docs/intro)
+- **Translation**: [react-i18next](https://react.i18next.com/)
 ---
 
 ## Installation and Setup

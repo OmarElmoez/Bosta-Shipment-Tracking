@@ -21,6 +21,7 @@ const Home = () => {
       />
       <p className={instruction_text}>{t('clickOn')} <span style={{cursor: "pointer"}} onClick={openModal}>{t(
         'trackShipment')}</span> {t('enter')} <span>{t('trackingNumber')}</span></p>
+      <p>{ import.meta.env["VITE_PRO_HEADER"] }</p>
     </>
 
   )

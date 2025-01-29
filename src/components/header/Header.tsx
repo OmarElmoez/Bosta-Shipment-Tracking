@@ -35,6 +35,7 @@ const Header = () => {
 
   return (
     <header className={header}>
+      <p>test paragraph</p>
       <section className={`container ${header_container}`}>
         <div onClick={goHome} style={{cursor: 'pointer'}}>
           <img src={Logo} alt="logo"/>
